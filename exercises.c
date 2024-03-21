@@ -130,8 +130,9 @@ int parentesisBalanceados(char *cadena) {
   char* dato;
   int balanc = 1;
   dato = cadena;
+  
 
-  while ((*dato) != '\0' && balanc == 1)
+  while ((*dato) != '\0' && balanc)
     {
       if (*dato == '(')
       {
@@ -186,5 +187,6 @@ int parentesisBalanceados(char *cadena) {
     balanc = 0;
   }
   return balanc;
+  
 }
 
