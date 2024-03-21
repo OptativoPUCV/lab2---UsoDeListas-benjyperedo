@@ -182,9 +182,9 @@ int parentesisBalanceados(char *cadena) {
       }
       dato = next(pila);
     }
-  
-  
-  
-  return 1;
+  if (top(pila) != NULL){
+    balanc = 0;
+  }
+  return balanc;
 }
 
