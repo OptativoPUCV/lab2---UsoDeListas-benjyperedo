@@ -128,64 +128,18 @@ paraéntesis balanceados. Retorna 1 si están balanceados,
 int parentesisBalanceados(char *cadena) {
   Stack* pila = create_stack();
   char* dato;
-  int balanc = 1;
-  dato = cadena;
-  
-  while (*dato != '\0' && balanc)
+  for (int i = 0 ; cadena[i] != '\0' ; i++)
     {
-      if (*dato == '(')
-      {
-        push(pila, dato);
+      if (cadena[i] == '(' || cadena[i] == '[' || cadena[i] == '{'){
+        push(pila, &cadena[i]);
       }
-      else if(*dato == ')')
-      {
-        if (top(pila) == NULL || *(char*)top(pila) != ')')
-        {
-          balanc = 0;
-          break;
-        } 
-        else{
-          pop(pila);
-        }
+      else if (cadena[i] == ')' || cadena[i] == ']' || cadena[i] == '}'){
+        if (top(pila) == NULL) return 0;
+        dato = pop(pila);
+        if ((*dato) != '(' && cadena[i] == ')') || (*dato) != '[' && cadena[i] == ']' || (*dato) != '{' && cadena[i] == '}') return 0;
       }
-
-      if (*dato == '{')
-      {
-        push(pila, dato);
-      }
-      else if(*dato == '}')
-      {
-        if (top(pila) == NULL || *(char*)top(pila) != '}')
-        {
-          balanc = 0;
-          break;
-        } 
-        else{
-          pop(pila);
-        }
-      }
-
-      if (*dato == '[')
-      {
-        push(pila, dato);
-      }
-      else if(*dato == ']')
-      {
-        if (top(pila) == NULL || *(char*)top(pila) != ']')
-        {
-          balanc = 0;
-          break;
-        } 
-        else{
-          pop(pila);
-        }
-      }
-      dato = next(pila);
     }
-  if (top(pila) != NULL){
-    balanc = 0;
-  }
-  return balanc;
-  
+  if (top(pila) != NULL) return 0;
+  return 1;
 }
 
