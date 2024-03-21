@@ -137,3 +137,17 @@ exercises.c:139:124: error: expected statement before ‘)’ token
 cc1: all warnings being treated as errors
 Compilation failed
 577e2d8
+Thu 21 Mar 2024 10:59:25 PM UTC: 
+ exercises.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+exercises.c: In function ‘parentesisBalanceados’:
+exercises.c:139:28: error: suggest parentheses around ‘&&’ within ‘||’ [-Werror=parentheses]
+  139 |         if ((*dato) != '(' && cadena[i] == ')' || (*dato) != '[' && cadena[i] == ']' || (*dato) != '{' && cadena[i] == '}') return 0;
+      |             ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~
+exercises.c:139:104: error: suggest parentheses around ‘&&’ within ‘||’ [-Werror=parentheses]
+  139 |         if ((*dato) != '(' && cadena[i] == ')' || (*dato) != '[' && cadena[i] == ']' || (*dato) != '{' && cadena[i] == '}') return 0;
+      |                                                                                         ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+5a16b7d
