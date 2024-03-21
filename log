@@ -74,3 +74,13 @@ Thu 21 Mar 2024 08:39:55 PM UTC:
  tests:  4|1
 total_score: 50/70
 607c484
+Thu 21 Mar 2024 09:14:56 PM UTC: 
+ exercises.c | 57 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 57 insertions(+)
+In file included from test.c:5:
+exercises.c: In function ‘parentesisBalanceados’:
+exercises.c:134:36: error: lvalue required as left operand of assignment
+  134 |   while ((*dato) != '\0' && balanc = 1)
+      |                                    ^
+Compilation failed
+a9d8471
